@@ -15,7 +15,7 @@ Firebase Cloud Messaging Http v1 for PHP
 ## Installation
 
 ```sh
-composer require kedniko/firebase-cloud-messaging-http-v1-php
+composer require juniorlemes/firebase-cloud-messaging-http-v1-php
 ```
 
 ## Send a message
