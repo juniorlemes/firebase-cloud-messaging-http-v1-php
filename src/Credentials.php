@@ -5,23 +5,23 @@ namespace Kedniko\FCM;
 use Firebase\JWT\JWT;
 use GuzzleHttp;
 
-final class Credentials
+class Credentials
 {
-    final public const SCOPE = 'https://www.googleapis.com/auth/firebase.messaging';
+     public const SCOPE = 'https://www.googleapis.com/auth/firebase.messaging';
 
-    final public const TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token';
+     public const TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token';
 
-    final public const EXPIRE = 3600;
+     public const EXPIRE = 3600;
 
-    final public const ALG = 'RS256';
+     public const ALG = 'RS256';
 
-    final public const CONTENT_TYPE = 'form_params';
+     public const CONTENT_TYPE = 'form_params';
 
-    final public const GRANT_TYPE = 'urn:ietf:params:oauth:grant-type:jwt-bearer';
+     public const GRANT_TYPE = 'urn:ietf:params:oauth:grant-type:jwt-bearer';
 
-    final public const METHOD = 'POST';
+     public const METHOD = 'POST';
 
-    final public const HTTP_ERRORS_OPTION = 'http_errors';
+     public const HTTP_ERRORS_OPTION = 'http_errors';
 
     private $keyFilePath;
 
@@ -30,7 +30,7 @@ final class Credentials
     /**
      * @return string Access token for a project
      */
-    public function getAccessToken(): string
+    public function getAccessToken()
     {
         $requestBody = ['grant_type' => self::GRANT_TYPE, 'assertion' => $this->getTokenPayload()];
 
@@ -43,7 +43,7 @@ final class Credentials
         return $result['access_token'];
     }
 
-    public function setKeyFileContent(array $content): static
+    public function setKeyFileContent(array $content)
     {
         $this->keyFileContent = json_encode($content, JSON_THROW_ON_ERROR);
         return $this;
@@ -52,7 +52,7 @@ final class Credentials
     /**
      * @return string Signed payload (with private key using algorithm)
      */
-    private function getTokenPayload(): string
+    private function getTokenPayload()
     {
         $keyBody = json_decode(
             (string) $this->getKeyFileContent(),
@@ -115,12 +115,12 @@ final class Credentials
         return file_get_contents($this->keyFilePath);
     }
 
-    public function getKeyFilePath(): string
+    public function getKeyFilePath()
     {
         return $this->keyFilePath;
     }
 
-    public function setKeyFilePath(mixed $keyFilePath): void
+    public function setKeyFilePath(mixed $keyFilePath)
     {
         if (is_file($keyFilePath)) {
             $this->keyFilePath = $keyFilePath;

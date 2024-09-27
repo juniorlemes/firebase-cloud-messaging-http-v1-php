@@ -7,7 +7,7 @@ use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 
-return static function (RectorConfig $rectorConfig): void {
+return static function (RectorConfig $rectorConfig) {
     $rectorConfig->paths([
         __DIR__.'/src',
     ]);
