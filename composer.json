@@ -1,5 +1,5 @@
 {
-    "name": "kedniko/firebase-cloud-messaging-http-v1-php",
+    "name": "juniorlemes/firebase-cloud-messaging-http-v1-php",
     "description": "Firebase cloud messaging http v1 php",
     "keywords": [
         "php",
@@ -13,14 +13,22 @@
         "firebase",
         "FCM",
         "Firebase Cloud Messaging",
-        "push notification"
+        "push notification",
+        "juniorlemes"
     ],
+    "homepage": "https://github.com/juniorlemes/firebase-cloud-messaging-http-v1-php",
     "license": "MIT",
     "authors": [
         {
             "name": "Nikodem Kedzierski",
             "email": "ked.niko@gmail.com",
             "homepage": "https://blog.kedniko.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Júnior Lemes",
+            "email": "developer@juniorlemes.dev.br",
+            "homepage": "https://juniorlemes.dev.br",
             "role": "Developer"
         }
     ],

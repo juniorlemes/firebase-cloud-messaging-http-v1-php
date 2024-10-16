@@ -15,7 +15,7 @@ Firebase Cloud Messaging Http v1 for PHP
 ## Installation
 
 ```sh
-composer require kedniko/firebase-cloud-messaging-http-v1-php
+composer require juniorlemes/firebase-cloud-messaging-http-v1-php
 ```
 
 ## Send a message
@@ -114,6 +114,11 @@ $tokens = [
 $bearerToken = FCM::getBearerToken($authKeyContent);
 FCM::unsubscribeFromTopic($bearerToken, 'my-topic-1', $tokens);
 
+```
+
+## FCM - Fornecer credenciais manualmente
+```
+<https://firebase.google.com/docs/cloud-messaging/auth-server?hl=pt#provide-credentials-manually>
 ```
 
 Credits:
