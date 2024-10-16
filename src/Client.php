@@ -4,7 +4,7 @@ namespace Kedniko\FCM;
 
 use GuzzleHttp;
 
-final class Client
+class Client
 {
 
     /**
@@ -18,22 +18,22 @@ final class Client
     const FCM_TOPIC_MANAGEMENT_ADD_PATH = '/iid/v1:batchAdd';
     const FCM_TOPIC_MANAGEMENT_REMOVE_PATH = '/iid/v1:batchRemove';
 
-    final public const CONTENT_TYPE = 'json';
+    public const CONTENT_TYPE = 'json';
 
-    final public const HTTP_ERRORS_OPTION = 'http_errors';
+    public const HTTP_ERRORS_OPTION = 'http_errors';
 
-    public function getUrl(string $projectID): string
+    public function getUrl(string $projectID)
     {
         return "https://fcm.googleapis.com/v1/projects/{$projectID}/messages:send";
     }
 
-    public function send(string $bearerToken, string $projectID, array $body): bool|string
+    public function send(string $bearerToken, string $projectID, array $body)
     {
         $url = $this->getUrl($projectID);
         return $this->post($bearerToken, $url, $body);
     }
 
-    public function post(string $bearerToken, string $url, array $body): bool|string
+    public function post(string $bearerToken, string $url, array $body)
     {
         $config = [
             'headers' => [

@@ -2,7 +2,7 @@
 
 namespace Kedniko\FCM;
 
-final class FCM
+ class FCM
 {
 
 
@@ -15,7 +15,7 @@ final class FCM
         return $c->getAccessToken();
     }
 
-    public static function send(string $bearerToken, $projectID, $body): void
+    public static function send(string $bearerToken, $projectID, $body)
     {
         $client = new Client();
         $client->send($bearerToken, $projectID, $body);
