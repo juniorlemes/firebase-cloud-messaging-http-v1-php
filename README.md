@@ -116,5 +116,9 @@ FCM::unsubscribeFromTopic($bearerToken, 'my-topic-1', $tokens);
 
 ```
 
+## FCM - Fornecer credenciais manualmente
+<https://firebase.google.com/docs/cloud-messaging/auth-server?hl=pt#provide-credentials-manually>
+
+
 Credits:
 <https://github.com/lkaybob/php-fcm-v1>
