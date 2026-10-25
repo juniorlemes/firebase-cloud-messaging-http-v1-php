@@ -4,7 +4,7 @@ use Kedniko\FCM\FCM;
 
 it('send-one-message', function () {
 
-    $authKeyContent = json_decode(file_get_contents(__DIR__ . '/appname-30xfgre76.json'), true);
+    $authKeyContent = json_decode(file_get_contents(__DIR__.'/appname-30xfgre76.json'), true);
     $bearerToken = FCM::getBearerToken($authKeyContent);
     $projectID = 'my-project-1';
 
@@ -26,7 +26,7 @@ it('send-one-message', function () {
 
 it('send-multiple-messages', function () {
 
-    $authKeyContent = json_decode(file_get_contents(__DIR__ . '/appname-30xfgre76.json'), true);
+    $authKeyContent = json_decode(file_get_contents(__DIR__.'/appname-30xfgre76.json'), true);
     $bearerToken = FCM::getBearerToken($authKeyContent);
     $projectID = 'my-project-1';
 
@@ -56,7 +56,7 @@ it('send-multiple-messages', function () {
 
 it('subscribe-to-topic', function () {
 
-    $authKeyContent = json_decode(file_get_contents(__DIR__ . '/appname-30xfgre76.json'), true);
+    $authKeyContent = json_decode(file_get_contents(__DIR__.'/appname-30xfgre76.json'), true);
     $bearerToken = FCM::getBearerToken($authKeyContent);
 
     $tokens = [
@@ -70,7 +70,7 @@ it('subscribe-to-topic', function () {
 
 it('unsubscribe-from-topic', function () {
 
-    $authKeyContent = json_decode(file_get_contents(__DIR__ . '/appname-30xfgre76.json'), true);
+    $authKeyContent = json_decode(file_get_contents(__DIR__.'/appname-30xfgre76.json'), true);
     $bearerToken = FCM::getBearerToken($authKeyContent);
 
     $tokens = [
