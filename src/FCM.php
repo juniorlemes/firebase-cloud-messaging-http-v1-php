@@ -17,17 +17,20 @@ class FCM
 
     /**
      * @param  array<string, mixed>  $body
+     * @return true|string True on success, otherwise the error message returned by Google
      */
-    public static function send(string $bearerToken, string $projectID, array $body): void
+    public static function send(string $bearerToken, string $projectID, array $body): true|string
     {
         $client = new Client();
-        $client->send($bearerToken, $projectID, $body);
+
+        return $client->send($bearerToken, $projectID, $body);
     }
 
     /**
      * @param  list<string>  $tokens
+     * @return true|string True on success, otherwise the error message returned by Google
      */
-    public static function subscribeToTopic(string $bearerToken, string $topic, array $tokens): void
+    public static function subscribeToTopic(string $bearerToken, string $topic, array $tokens): true|string
     {
         $host = Client::FCM_TOPIC_MANAGEMENT_HOST;
         $path = Client::FCM_TOPIC_MANAGEMENT_ADD_PATH;
@@ -37,13 +40,15 @@ class FCM
             'to' => "/topics/{$topic}",
             'registration_tokens' => $tokens,
         ];
-        $client->post($bearerToken, $url, $body);
+
+        return $client->post($bearerToken, $url, $body);
     }
 
     /**
      * @param  list<string>  $tokens
+     * @return true|string True on success, otherwise the error message returned by Google
      */
-    public static function unsubscribeFromTopic(string $bearerToken, string $topic, array $tokens): void
+    public static function unsubscribeFromTopic(string $bearerToken, string $topic, array $tokens): true|string
     {
         $host = Client::FCM_TOPIC_MANAGEMENT_HOST;
         $path = Client::FCM_TOPIC_MANAGEMENT_REMOVE_PATH;
@@ -53,6 +58,7 @@ class FCM
             'to' => "/topics/{$topic}",
             'registration_tokens' => $tokens,
         ];
-        $client->post($bearerToken, $url, $body);
+
+        return $client->post($bearerToken, $url, $body);
     }
 }

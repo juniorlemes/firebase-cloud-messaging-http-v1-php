@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-11-24
+### Fixed
+- `FCM::send()`, `FCM::subscribeToTopic()` and `FCM::unsubscribeFromTopic()` discarded errors returned by Google. They now return `true` on success or the error message (`true|string`, previously `void`).
+
 ## [0.3.0] - 2026-10-24
 ### Changed
 - Requires PHP `^8.5.12`.
